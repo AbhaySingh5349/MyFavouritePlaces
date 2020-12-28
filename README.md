@@ -1,4 +1,6 @@
 # Features of App:
+--> Phone Number registration using Firebase Authenticayion.
+
 --> Search locations in search bar.
 
 --> Saving favourite/important places nearby (adding marker by Long Press on map).
@@ -22,3 +24,15 @@
 
 # Libraries:
 --> [Circle Image View](https://github.com/hdodenhof/CircleImageView)
+
+--> [Material Design Library](https://github.com/navasmdc/MaterialDesignLibrary)
+
+--> [ButterKnife View Binding](https://github.com/JakeWharton/butterknife)
+
+--> [Glide Media Management](https://github.com/bumptech/glide)
+
+--> [Country Phone Code Selector](https://github.com/hbb20/CountryCodePickerProject)
+
+--> [Multidex Support](https://developer.android.com/studio/build/multidex)
+
+--> [Geofire Location](https://github.com/firebase/geofire-android)
