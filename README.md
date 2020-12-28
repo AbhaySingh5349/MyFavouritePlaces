@@ -38,5 +38,5 @@
 --> [Geofire Location](https://github.com/firebase/geofire-android)
 
 # Developed By:
---> Abhay Singh
+--> Abhay Singh:
     Feedback is highly appreciated, report any issues or drop suggestions at: [abhay5349singh@gmail.com](mailto:abhay5349singh@gmail.com)
