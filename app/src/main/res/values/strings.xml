@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyFavouritePlaces</string>
+    <string name="title_activity_home_n_address_maps">Map</string>
+    <string name="title_activity_view_place_maps">Map</string>
+</resources>
