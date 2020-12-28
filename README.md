@@ -23,7 +23,7 @@
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103240864-8074b480-4977-11eb-9fec-4c46b95868e4.png)
 
 # Libraries:
---> [Circle Image View](https://github.com/hdodenhof/CircleImageView) : dssdfsd fsdfdsfs
+--> [Circle Image View](https://github.com/hdodenhof/CircleImageView)
 
 --> [Material Design Library](https://github.com/navasmdc/MaterialDesignLibrary)
 
