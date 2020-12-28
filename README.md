@@ -21,4 +21,4 @@
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103240864-8074b480-4977-11eb-9fec-4c46b95868e4.png)
 
 # Libraries:
---> https://github.com/hdodenhof/CircleImageView
+--> [Circle Image View]{https://github.com/hdodenhof/CircleImageView}
