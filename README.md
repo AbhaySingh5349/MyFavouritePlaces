@@ -1,5 +1,5 @@
 # Features of App:
---> Phone Number registration using Firebase Authenticayion.
+--> Phone Number registration using Firebase Authentication.
 
 --> Search locations in search bar.
 
