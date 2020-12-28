@@ -39,5 +39,4 @@
 
 # Developed By:
 --> Abhay Singh
-   
     Feedback is highly appreciated, report any issues or drop suggestions at: [abhay5349singh@gmail.com](mailto:abhay5349singh@gmail.com)
