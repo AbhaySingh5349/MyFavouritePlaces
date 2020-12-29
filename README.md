@@ -19,6 +19,7 @@
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239309-2114a580-4973-11eb-80fb-a40d9635b57a.png)
  Main Activity
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239582-f7a84980-4973-11eb-89e7-a1e463dca7b9.png)
+ Add details about place
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239710-6ab1c000-4974-11eb-8978-c202392ecaf9.png)
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239985-165b1000-4975-11eb-8119-4bbd9d449c78.png)
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103240451-67b7cf00-4976-11eb-8252-caec108bf842.png)
