@@ -17,6 +17,7 @@
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103265308-50f39580-49d3-11eb-885c-134e51a53f8c.png)
  Phone number Auth
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239309-2114a580-4973-11eb-80fb-a40d9635b57a.png)
+ Main Activity
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239582-f7a84980-4973-11eb-89e7-a1e463dca7b9.png)
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239710-6ab1c000-4974-11eb-8978-c202392ecaf9.png)
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/48565759/103239985-165b1000-4975-11eb-8119-4bbd9d449c78.png)
