@@ -22,6 +22,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.myfavouriteplaces.firebasetree.Constants;
 import com.example.myfavouriteplaces.firebasetree.NodeNames;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -63,6 +68,8 @@ public class EditProfileActivity extends AppCompatActivity {
     TextInputEditText profileNameTextInputEditText;
     @BindView(R.id.logOutTextView)
     TextView logOutTextView;
+    @BindView(R.id.bannerAd)
+    AdView bannerAd;
 
     FirebaseAuth firebaseAuth; // to create object of Firebase Auth class to fetch currently loged in user
     FirebaseUser firebaseUser; // to create object of Firebase User class to get current user to store currently loged in user
@@ -83,6 +90,10 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
+
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        AdRequest adRequest = new AdRequest.Builder().build();
+        bannerAd.loadAd(adRequest);
 
         // retrieving current user
 

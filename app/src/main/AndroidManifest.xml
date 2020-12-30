@@ -22,9 +22,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
         <activity
             android:name=".ViewPlaceMapsActivity"
-            android:label="@string/title_activity_view_place_maps"></activity>
+            android:label="@string/title_activity_view_place_maps" />
         <activity
             android:name=".AddPlaceMapsActivity"
             android:label="@string/title_activity_home_n_address_maps" />

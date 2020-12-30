@@ -30,6 +30,13 @@ import com.example.myfavouriteplaces.firebasetree.NodeNames;
 import com.example.myfavouriteplaces.model.FavouritePlacesModelClass;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -49,7 +56,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
 
     /* adding and displaying address of home, work place and favourite places */
 
@@ -84,11 +91,23 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog gpsAlertDialog;
     int gpsEnableRequestCode = 101;
 
+    private InterstitialAd interstitialAd;
+    private RewardedVideoAd rewardedVideoAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        rewardedVideoAd.setRewardedVideoAdListener(this);
+        loadRewardVideoAd();
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
         linearLayoutManager.setStackFromEnd(true); // to show newly added place at top
@@ -126,9 +145,23 @@ public class MainActivity extends AppCompatActivity {
         profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,EditProfileActivity.class));
+                if(interstitialAd.isLoaded()){
+                    interstitialAd.show();
+                }else {
+                    startActivity(new Intent(MainActivity.this,EditProfileActivity.class));
+                }
             }
         });
+
+        interstitialAd.setAdListener(new AdListener()
+                                     {
+                                         @Override
+                                         public void onAdClosed() {
+                                             startActivity(new Intent(MainActivity.this,EditProfileActivity.class));
+                                             interstitialAd.loadAd(new AdRequest.Builder().build());
+                                         }
+                                     }
+        );
 
         // retrieving home info from database
 
@@ -229,6 +262,9 @@ public class MainActivity extends AppCompatActivity {
         favoritePlacesCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(rewardedVideoAd.isLoaded()){
+                    rewardedVideoAd.show();
+                }
                 Intent intent = new Intent(MainActivity.this, AddPlaceMapsActivity.class);
                 intent.putExtra("source","Add Favourite Places");
                 startActivity(intent);
@@ -365,5 +401,69 @@ public class MainActivity extends AppCompatActivity {
             locationImageView = itemView.findViewById(R.id.locationImageView);
             placeContactTextView = itemView.findViewById(R.id.placeContactTextView);
         }
+    }
+
+    private void loadRewardVideoAd() {
+        if(!rewardedVideoAd.isLoaded()){
+            rewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+        }
+    }
+
+    @Override
+    public void onRewardedVideoAdLoaded() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+        loadRewardVideoAd();
+    }
+
+    @Override
+    public void onRewarded(RewardItem rewardItem) {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int i) {
+
+    }
+
+    @Override
+    public void onRewardedVideoCompleted() {
+
+    }
+
+    @Override
+    protected void onPause() {
+        rewardedVideoAd.pause(this);
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        rewardedVideoAd.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        rewardedVideoAd.destroy(this);
+        super.onDestroy();
     }
 }
