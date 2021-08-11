@@ -1,6 +1,5 @@
 # Features of App:
 --> Search locations in search bar.
-
 --> Phone Number registration using Firebase Authentication.
 
 --> Saving favourite/important places nearby (adding marker by Long Press on map).
